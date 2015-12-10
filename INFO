@@ -1,0 +1,19 @@
+Project Name: Controller Performance Testing (cperf)
+Repo name: cperf
+Project Category: Integration & Testing
+Lifecycle State: Incubation
+Primary Contact: Daniel Farrell
+Project Lead: Daniel Farrell
+Jira Project Name: Controller Performance Testing
+Jira Project Prefix: cperf
+Mailing list tag: cperf
+
+Committers:
+Daniel Farrell, dfarrell@redhat.com, IRC: dfarrell07
+Luis Gomez, ecelgp@gmail.com, IRC: LuisGomez
+Jamo Luhrsen, jluhrsen@redhat.com, IRC: jamoluhrsen
+Marcus Williams, marcus.williams@intel.com, IRC: mgkwill
+Tim Rozet, trozet@redhat.com, IRC: trozet
+
+Link to TSC approval: http://ircbot.wl.linuxfoundation.org/meetings/opnfv-meeting/2015/opnfv-meeting.2015-09-01-13.59.log.html
+Link to approval of additional submitters: None 
