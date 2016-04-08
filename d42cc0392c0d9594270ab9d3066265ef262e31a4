@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a486d77_46228bba",
+        "filename": "docker/Dockerfile",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 459
+      },
+      "writtenOn": "2016-04-08T08:55:02Z",
+      "side": 1,
+      "message": "Before any instruction, you can add some text with \"#\" explaining the purpose of this dockerfile along with some useful information if you want. Something like:\n\n# Docker image for OPNFV blah blah\n# Maintained by ... \n# ...\n# All rights reserved. This program and the accompanying materials\n# are made available under the terms of the Apache License, Version 2.0\n# which accompanies this distribution, and is available at\n# http://www.apache.org/licenses/LICENSE-2.0\n#",
+      "revId": "d42cc0392c0d9594270ab9d3066265ef262e31a4",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a486d77_665ea747",
+        "filename": "docker/Dockerfile",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 459
+      },
+      "writtenOn": "2016-04-08T08:55:02Z",
+      "side": 1,
+      "message": "Please include MAINTAINER label with a valid name/email here. The MAINTAINER instruction sets the Author field of the image and you can see if for example when running \"docker inspect\". It is useful to track who is the responsible of the image or whom to blame :)\n\nExample:\n\nMAINTAINER Jamo Luhrsen \u003cjluhrsen@redhat.com\u003e",
+      "revId": "d42cc0392c0d9594270ab9d3066265ef262e31a4",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a486d77_0655b31c",
+        "filename": "docker/Dockerfile",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 459
+      },
+      "writtenOn": "2016-04-08T08:55:02Z",
+      "side": 1,
+      "message": "If you are gonna put all the stuff under /home/opnfv/ (as I would suggest), it would be an advantage to have the environment variable HOME defined. \n\nENV HOME /home/opnfv",
+      "revId": "d42cc0392c0d9594270ab9d3066265ef262e31a4",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a486d77_86408357",
+        "filename": "docker/Dockerfile",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 459
+      },
+      "writtenOn": "2016-04-08T08:55:02Z",
+      "side": 1,
+      "message": "That is just esthetics, but why don\u0027t you put all the ENV together (after ENV REPOS_DIR)? :)\nIt would be clearer.",
+      "revId": "d42cc0392c0d9594270ab9d3066265ef262e31a4",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
