@@ -67,6 +67,24 @@
       "revId": "d42cc0392c0d9594270ab9d3066265ef262e31a4",
       "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a486d77_e92b88e9",
+        "filename": "docker/Dockerfile",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 2919
+      },
+      "writtenOn": "2016-04-09T00:17:13Z",
+      "side": 1,
+      "message": "new patch uses comments to kind of denote why I had them separate.  because the ENV and RUN were in blocks of the work they were meant to achieve.",
+      "parentUuid": "1a486d77_86408357",
+      "revId": "d42cc0392c0d9594270ab9d3066265ef262e31a4",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
     }
   ]
 }
