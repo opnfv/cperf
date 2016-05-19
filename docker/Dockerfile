@@ -35,6 +35,7 @@ RUN yum install -y \
     automake \
     libtool \
     libconfig-devel \
+    libffi-devel \
     wget \
     git \
     python-devel \
