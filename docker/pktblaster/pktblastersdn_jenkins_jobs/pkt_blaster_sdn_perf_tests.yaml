@@ -1,0 +1,70 @@
+# ------------------------------------------------------------------------------
+# PktBlaster_SDN_performance_scalability
+# ------------------------------------------------------------------------------
+- job-template:
+    name: PktBlaster_SDN_Tests
+    description: "script execution for measuring Proactive Path Provisioning Time"
+    defaults: pktblaster-sdn
+    triggers:
+      #- timed:
+    wrappers:
+      - timestamps:
+    parameters:
+        - string:
+            name: CONTROLLER_HOST_IP
+            default: "192.168.75.211"
+            description: "Controller management ip address"
+        - string:
+            name: CONTROLLER_NODE_IP
+            default: "33.33.33.1"
+            description: "Enter IP of the Port connected to controller"
+        - string:
+            name: SWITCH_COUNT
+            default: "6"
+            description: "no.of switches for sdn_topology creation."
+        - string:
+            name: NBPORT
+            default: "eth0"
+            description: "North Bound interface port."
+        - string:
+            name: SBPORT
+            default: "eth0"
+            description: "South Bound interface port."
+
+    builders:
+      - shell: |
+          #-------------------------------------------------  
+          #pre-actin script
+          #-------------------------------------------------
+          echo "pre-action execution....."
+          chmod -R 777 /home/pktblastersdn/pktblastersdn_jenkins_jobs/pktblastersdn_pre_actions.sh
+          source /home/pktblastersdn/pktblastersdn_jenkins_jobs/pktblastersdn_pre_actions.sh
+          #-------------------------------------------------
+          #test-script 
+          #-------------------------------------------------
+          echo "scripts execution for perf tests..."
+          python /home/pktblastersdn/pktblastersdn_tests/sdn_topology.py \
+               --switch_count=$SWITCH_COUNT \
+               --controller_node_ip=$CONTROLLER_NODE_IP
+
+          python /home/pktblastersdn/pktblastersdn_tests/odl_tester_with_packet_capture_for_bulk_and_single_flow.py \
+              --controller_host_ip=$CONTROLLER_HOST_IP \
+              --NBport=$NBPORT \
+              --SBport=$SBPORT
+          
+          python /home/pktblastersdn/pktblastersdn_tests/Cleanup.py
+     
+          #-------------------------------------------------
+          #post-action script
+          #-------------------------------------------------
+          echo "post-action execution..."
+          cp /home/PKTBSDN_Reports/report.html /home/pktblastersdn/Results/
+# ------------------------------------------------------------------------------
+# job instances
+# ------------------------------------------------------------------------------
+
+- project:
+    name: pktblastersdn-jenkins-jobs
+    jobs:
+       - 'PktBlaster_SDN_Tests'
+       
