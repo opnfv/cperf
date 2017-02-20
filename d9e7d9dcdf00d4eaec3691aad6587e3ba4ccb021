@@ -390,6 +390,52 @@
     },
     {
       "key": {
+        "uuid": "dabed58f_c64d4ac6",
+        "filename": "docker/pktblaster/pktblastersdn_tests/odl_tester_with_packet_capture_for_bulk_and_single_flow.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 385
+      },
+      "writtenOn": "2017-02-20T22:20:40Z",
+      "side": 1,
+      "message": "before *starting* the test.",
+      "range": {
+        "startLine": 33,
+        "startChar": 65,
+        "endLine": 33,
+        "endChar": 86
+      },
+      "revId": "d9e7d9dcdf00d4eaec3691aad6587e3ba4ccb021",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dabed58f_e64aceab",
+        "filename": "docker/pktblaster/pktblastersdn_tests/odl_tester_with_packet_capture_for_bulk_and_single_flow.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 385
+      },
+      "writtenOn": "2017-02-20T22:20:40Z",
+      "side": 1,
+      "message": "is it necessary to hard-code IPO addresses? invitation to future problems, IMO.",
+      "range": {
+        "startLine": 46,
+        "startChar": 13,
+        "endLine": 46,
+        "endChar": 47
+      },
+      "revId": "d9e7d9dcdf00d4eaec3691aad6587e3ba4ccb021",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dabed58f_a6a616c0",
         "filename": "docker/pktblaster/pktblastersdn_tests/pktblastersdn_jenkins_jobs/.pktblastersdn_pre_actions.sh.swp",
         "patchSetId": 1
