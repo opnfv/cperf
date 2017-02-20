@@ -1,0 +1,409 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dabed58f_26922658",
+        "filename": "docker/pktblaster/Dockerfile",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 543
+      },
+      "writtenOn": "2017-02-20T19:51:11Z",
+      "side": 1,
+      "message": "This seems unnecessarily broad. What were you hitting?",
+      "revId": "d9e7d9dcdf00d4eaec3691aad6587e3ba4ccb021",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dabed58f_46ab9a89",
+        "filename": "docker/pktblaster/Dockerfile",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 543
+      },
+      "writtenOn": "2017-02-20T19:51:11Z",
+      "side": 1,
+      "message": "Please clean up all trailing whitespace (clear on Gerrit web UI, look for red)",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 16
+      },
+      "revId": "d9e7d9dcdf00d4eaec3691aad6587e3ba4ccb021",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dabed58f_c6754a33",
+        "filename": "docker/pktblaster/Dockerfile",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 543
+      },
+      "writtenOn": "2017-02-20T19:51:11Z",
+      "side": 1,
+      "message": "This seems like...a lot. Are these really needed? Ones that stand out as large/maybe-not-needed are xorg and gtk.",
+      "revId": "d9e7d9dcdf00d4eaec3691aad6587e3ba4ccb021",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dabed58f_e672ce48",
+        "filename": "docker/pktblaster/Dockerfile",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 543
+      },
+      "writtenOn": "2017-02-20T19:51:11Z",
+      "side": 1,
+      "message": "You have curl already above",
+      "revId": "d9e7d9dcdf00d4eaec3691aad6587e3ba4ccb021",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dabed58f_8688b223",
+        "filename": "docker/pktblaster/Dockerfile",
+        "patchSetId": 1
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 543
+      },
+      "writtenOn": "2017-02-20T19:51:11Z",
+      "side": 1,
+      "message": "Can do this (user/group) in one line like with mysql:mysql",
+      "revId": "d9e7d9dcdf00d4eaec3691aad6587e3ba4ccb021",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dabed58f_2679c62f",
+        "filename": "docker/pktblaster/Dockerfile",
+        "patchSetId": 1
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 543
+      },
+      "writtenOn": "2017-02-20T19:51:11Z",
+      "side": 1,
+      "message": "This seems unnecessarily broad. I guess just need +x for owner/group?",
+      "range": {
+        "startLine": 76,
+        "startChar": 13,
+        "endLine": 76,
+        "endChar": 16
+      },
+      "revId": "d9e7d9dcdf00d4eaec3691aad6587e3ba4ccb021",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dabed58f_868f5223",
+        "filename": "docker/pktblaster/Dockerfile",
+        "patchSetId": 1
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 543
+      },
+      "writtenOn": "2017-02-20T19:51:11Z",
+      "side": 1,
+      "message": "We don\u0027t have line length linting so this isn\u0027t something we can really enforce, but consider breaking where approprate",
+      "revId": "d9e7d9dcdf00d4eaec3691aad6587e3ba4ccb021",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dabed58f_0695a23f",
+        "filename": "docker/pktblaster/Dockerfile",
+        "patchSetId": 1
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 543
+      },
+      "writtenOn": "2017-02-20T19:51:11Z",
+      "side": 1,
+      "message": "This seems unnecessarily broad. What were you hitting?",
+      "range": {
+        "startLine": 89,
+        "startChar": 13,
+        "endLine": 89,
+        "endChar": 16
+      },
+      "revId": "d9e7d9dcdf00d4eaec3691aad6587e3ba4ccb021",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dabed58f_a694d637",
+        "filename": "docker/pktblaster/Dockerfile",
+        "patchSetId": 1
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 543
+      },
+      "writtenOn": "2017-02-20T19:51:11Z",
+      "side": 1,
+      "message": "This is present?",
+      "revId": "d9e7d9dcdf00d4eaec3691aad6587e3ba4ccb021",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dabed58f_26a0e68f",
+        "filename": "docker/pktblaster/pktblastersdn_jenkins_jobs/pkt_blaster_sdn_perf_tests.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 543
+      },
+      "writtenOn": "2017-02-20T19:51:11Z",
+      "side": 1,
+      "message": "I think this will fail as invalid yaml? Have you done `jenkins-jobs test` to validate?",
+      "revId": "d9e7d9dcdf00d4eaec3691aad6587e3ba4ccb021",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dabed58f_c6ac6a8f",
+        "filename": "docker/pktblaster/pktblastersdn_jenkins_jobs/pkt_blaster_sdn_perf_tests.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 543
+      },
+      "writtenOn": "2017-02-20T19:51:11Z",
+      "side": 1,
+      "message": "Going to stop repeating this permissions feedback for each instance, please consider only making required changes",
+      "range": {
+        "startLine": 40,
+        "startChar": 19,
+        "endLine": 40,
+        "endChar": 22
+      },
+      "revId": "d9e7d9dcdf00d4eaec3691aad6587e3ba4ccb021",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dabed58f_e6a96e7c",
+        "filename": "docker/pktblaster/pktblastersdn_jenkins_jobs/pktblastersdn_pre_actions.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 543
+      },
+      "writtenOn": "2017-02-20T19:51:11Z",
+      "side": 1,
+      "message": "In general, we try to not merge commented out code. Unless it\u0027s an option someone may want to flag, better to remove. Applies elsewhere.",
+      "revId": "d9e7d9dcdf00d4eaec3691aad6587e3ba4ccb021",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dabed58f_86b672db",
+        "filename": "docker/pktblaster/pktblastersdn_jenkins_jobs/pktblastersdn_pre_actions.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 543
+      },
+      "writtenOn": "2017-02-20T19:51:11Z",
+      "side": 1,
+      "message": "I\u0027m not a fan of capitalized files/dirs, but this is personal preference and non-blocking while we don\u0027t have linting to enforce it",
+      "range": {
+        "startLine": 14,
+        "startChar": 29,
+        "endLine": 14,
+        "endChar": 36
+      },
+      "revId": "d9e7d9dcdf00d4eaec3691aad6587e3ba4ccb021",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dabed58f_66b57ecc",
+        "filename": "docker/pktblaster/pktblastersdn_startup.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 543
+      },
+      "writtenOn": "2017-02-20T19:51:11Z",
+      "side": 1,
+      "message": "Obviously I don\u0027t know much about the tool, but is this really starting it?",
+      "revId": "d9e7d9dcdf00d4eaec3691aad6587e3ba4ccb021",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dabed58f_e6c08e2c",
+        "filename": "docker/pktblaster/pktblastersdn_tests/Cleanup.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 543
+      },
+      "writtenOn": "2017-02-20T19:51:11Z",
+      "side": 1,
+      "message": "Again, sorry for not having linting for this, but please run pep8, flake8, coala or similar linter against your Python (and shell/yaml/whatever else ideally) to check basic style",
+      "revId": "d9e7d9dcdf00d4eaec3691aad6587e3ba4ccb021",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dabed58f_26c78647",
+        "filename": "docker/pktblaster/pktblastersdn_tests/Cleanup.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 543
+      },
+      "writtenOn": "2017-02-20T19:51:11Z",
+      "side": 1,
+      "message": "Almost never good idea in python to import *, either be explicit or import the top level module and provide qualified names",
+      "range": {
+        "startLine": 1,
+        "startChar": 22,
+        "endLine": 1,
+        "endChar": 23
+      },
+      "revId": "d9e7d9dcdf00d4eaec3691aad6587e3ba4ccb021",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dabed58f_a6e296d3",
+        "filename": "docker/pktblaster/pktblastersdn_tests/Cleanup.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 543
+      },
+      "writtenOn": "2017-02-20T19:51:11Z",
+      "side": 1,
+      "message": "Multi-line? In general, consistency",
+      "range": {
+        "startLine": 3,
+        "startChar": 15,
+        "endLine": 3,
+        "endChar": 16
+      },
+      "revId": "d9e7d9dcdf00d4eaec3691aad6587e3ba4ccb021",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dabed58f_86dd1217",
+        "filename": "docker/pktblaster/pktblastersdn_tests/Cleanup.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 543
+      },
+      "writtenOn": "2017-02-20T19:51:11Z",
+      "side": 1,
+      "message": "Not being used?",
+      "revId": "d9e7d9dcdf00d4eaec3691aad6587e3ba4ccb021",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dabed58f_c6c30a37",
+        "filename": "docker/pktblaster/pktblastersdn_tests/Cleanup.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 543
+      },
+      "writtenOn": "2017-02-20T19:51:11Z",
+      "side": 1,
+      "message": "Mixing tabs and spaces in Python is a syntax error",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 9
+      },
+      "revId": "d9e7d9dcdf00d4eaec3691aad6587e3ba4ccb021",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dabed58f_a6a616c0",
+        "filename": "docker/pktblaster/pktblastersdn_tests/pktblastersdn_jenkins_jobs/.pktblastersdn_pre_actions.sh.swp",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 543
+      },
+      "writtenOn": "2017-02-20T19:51:11Z",
+      "side": 1,
+      "message": "This is a vim tmp file. Other than being useless to others, see other comment about why not to merge binary files.",
+      "revId": "d9e7d9dcdf00d4eaec3691aad6587e3ba4ccb021",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dabed58f_86a192ab",
+        "filename": "docker/pktblaster/pktblastersdn_tests/sdnconfig.pyc",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 543
+      },
+      "writtenOn": "2017-02-20T19:51:11Z",
+      "side": 1,
+      "message": "It\u0027s super important not to merge binary files into git repos. They can\u0027t be properly version controlled and just increase the size of the repo by their size forever.",
+      "revId": "d9e7d9dcdf00d4eaec3691aad6587e3ba4ccb021",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
