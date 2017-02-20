@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "dabed58f_4635da44",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 543
+      },
+      "writtenOn": "2017-02-20T19:52:36Z",
+      "side": 1,
+      "message": "Commit message docs: https://chris.beams.io/posts/git-commit/",
+      "revId": "d9e7d9dcdf00d4eaec3691aad6587e3ba4ccb021",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dabed58f_26922658",
         "filename": "docker/pktblaster/Dockerfile",
         "patchSetId": 1
