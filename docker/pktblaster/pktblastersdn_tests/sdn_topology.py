@@ -21,12 +21,10 @@ def cmdarg(argv):
         try:
                 opts, args = getopt.getopt(argv,"s:i:h",["switch_count=","controller_node_ip="])
         except getopt.GetoptError:
-                #print 'python sdn_topology.py -s <switch count> -i <odl controller node ip>'
 		print 'python sdn_topology.py --switch_count <switch count> --controller_node_ip <odl controller node ip>'
                 sys.exit(2)
         for opt, arg in opts:
                 if opt == '-h':
-                        #print 'python sdn_topology.py -s <switch count> -i <odl controller node ip>'
 			print 'python sdn_topology.py --switch_count <switch count> --controller_node_ip <odl controller node ip>'
                         sys.exit()
                 elif opt in ("-s", "--switch_count"):
@@ -40,8 +38,8 @@ if __name__ == "__main__":
    cmdarg(sys.argv[1:])
 
 name = filename
-filename=name+'.xml' 
-sw=int(switches)
+filename=name+'.xml'
+sw= int(switches)
 outFile = open(filename, 'w')
 generated_on = str(datetime.datetime.now())
 tmp = open("/tmp/temp.txt", 'w')
@@ -61,14 +59,11 @@ for i in range(1,sw+1):
 	if i%9 == 0:
 		x = 78
 		y=y+35
-	        #y=str(y)
-	
 	bodyElt = etree.SubElement(page, "d i='%s' g='S' t='%s' c='4' x='%s' y='%s' s=';Black' e='true' p=''" %(i,t,x,y))
 	if i == sw:
 		lsx=x
 		lsy=y
 	x=x+108
-	#x=str(x)
 
 
 ### Printing the Traffic End points connections ###
@@ -108,8 +103,7 @@ for i in range(1,3):
 	if i == 1:
 	    temp1 = t
             first_sw =s+str(i)+"_"+str(i)
-            TEP = etree.SubElement(page, "l p1='%s' p2='%s' v='' " %(temp1,first_sw))
- 
+            TEP = etree.SubElement(page, "l p1='%s' p2='%s' v='' " %(temp1,first_sw)) 
 	else:
 	    temp2=t
             last_sw = s+str(switches)+"_"+str(i)
@@ -132,8 +126,7 @@ shutil.move( source, destination)
 #FUNCTION TO SET CONTROLLER
 #################################################################################
 
-def vx_sdn_set_controller ():
-		
+def vx_sdn_set_controller ():	
 	session_ip = emulation_host_ip
 	username = "admin"
 	password = "admin"
@@ -174,22 +167,22 @@ def vx_sdn_set_controller ():
 
 controller_id = vx_sdn_set_controller ()
 
-################################
+####################################
 # FUNCTION TO START EMULATION TEST #
-########################name######## 
+####################################
 def vx_sdn_start_emulation ():
 
 	session_ip = emulation_host_ip   #raw_input ("Enter Session IP: ")
 	topology_name = str(name)
-	controller_ip =  controller_node_ip #raw_input ("Enter controller_ip: ")  
+	controller_ip =  controller_node_ip #raw_input ("Enter controller_ip: ")
 	controller_name = "ODL"
 	controller_port = "6653"
 	stp_mode = "yes"
 	controller_versions = "1.3"
-	
+
 	url = "http://"+session_ip+"/VxSDN/emulation/test/start"
 	post_header = {'Content-Type': 'application/json','accept': 'application/json'}
-	payload = { 
+	payload = {
                        "topology_name": topology_name,
                        "controller_id":controller_id,
                        "controller_name":controller_name,

@@ -19,18 +19,18 @@ import logging
 
 ##Configure the filenames in below the main function also
 try:
-	os.mkdir("/home/Reports")
+	os.mkdir("/home/reports")
 except:
 	pass
 
 filename1 = "output_http.txt"
 filename2 = "output_flow.txt"
-filename3 = "Reports/report.html"
+filename3 = "/home/reports/report.html"
 
 print "\nThis script calculate the \"Proactive Path Provisioning Time\" with bulk flows install from Northbound insterface in single REST request.\n"
 
 print "\nNote:"
-print "      Make sure the SDN controller and mininet is running before start the test."
+print "      Make sure the SDN controller and mininet is running before starting the test."
 print "      Use --fpr and --bulk_add option to send bulk flows in single REST request."
 print "      Option --NBport and --SBport is mandatory to run the script otherwise"
 print "      script use the default(eth0) interface.\n\n"
@@ -78,28 +78,27 @@ def work3():
     target = open(filename2, 'w')
     target.write(flow_mod)
 
-		
 class Timer(object):
          def __init__(self, verbose=False):
              self.verbose = verbose
-    
+
          def __enter__(self):
              self.start = time.time()
              return self
-     
+
          def __exit__(self, *args):
              self.end = time.time()
              self.secs = self.end - self.start
              self.msecs = self.secs * 1000  # millisecs
              if self.verbose:
                  print("elapsed time: %f ms" % self.msecs)
-     
-   
+
+
 class Counter(object):
          def __init__(self, start=0):
              self.lock = threading.Lock()
              self.value = start
-     
+
          def increment(self, value=1):
              self.lock.acquire()
              val = self.value
@@ -108,25 +107,24 @@ class Counter(object):
              finally:
                  self.lock.release()
              return val
-     
-   
+
 def _prepare_post(cntl, method, flows, template=None):
          """Creates a POST http requests to configure a flow in configuration datastore.
-     
+
          Args:
              :param cntl: controller's ip address or hostname
-     
+
              :param method: determines http request method
-     
+
              :param flows: list of flow details
-     
+
              :param template: flow template to be to be filled
-     
+
          Returns:
              :returns req: http request object
          """
          flow_list = []
-	  
+
          for dev_id, ip in (flows):
              flow = copy.deepcopy(template)
              flow["id"] = ip
@@ -138,20 +136,19 @@ def _prepare_post(cntl, method, flows, template=None):
          req = requests.Request(method, url, headers={'Content-Type': 'application/json'},
                                 data=req_data, auth=('admin', 'admin'))
          return req
-     
-   
+
 def _prepare_delete(cntl, method, flows, template=None):
          """Creates a DELETE http requests to configure a flow in configuration datastore.
-     
+
          Args:
              :param cntl: controller's ip address or hostname
-     
+
              :param method: determines http request method
-     
+
              :param flows: list of flow details
-     
+
              :param template: flow template to be to be filled
-     
+
          Returns:
              :returns req: http request object
          """
@@ -160,33 +157,33 @@ def _prepare_delete(cntl, method, flows, template=None):
          req = requests.Request(method, url, headers={'Content-Type': 'application/json'},
                                 data=None, auth=('admin', 'admin'))
          return req
-  
+
 def _wt_request_sender(thread_id, preparefnc, inqueue=None, exitevent=None, controllers=[], restport='',
                             template=None, outqueue=None, method=None):
          """The funcion sends http requests.
-   
+
         Runs in the working thread. It reads out flow details from the queue and sends apropriate http requests
          to the controller
-  
+
          Args:
              :param thread_id: thread id
-   
+
              :param preparefnc: function to preparesthe http request
-  
+
              :param inqueue: input queue, flow details are comming from here
-     
+
              :param exitevent: event to notify working thread that parent (task executor) stopped filling the input queue
-  
+
              :param controllers: a list of controllers' ip addresses or hostnames
-  
+
              :param restport: restconf port
-  
+
              :param template: flow template used for creating flow content
-     
+
              :param outqueue: queue where the results should be put
-  
+
              :param method: method derermines the type of http request
-  
+
          Returns:
              nothing, results must be put into the output queue
          """
@@ -194,7 +191,7 @@ def _wt_request_sender(thread_id, preparefnc, inqueue=None, exitevent=None, cont
          cntl = controllers[0]
          counter = [0 for i in range(600)]
          loop = True
-  
+
          while loop:
              try:
                  flowlist = inqueue.get(timeout=1)
@@ -216,11 +213,11 @@ def _wt_request_sender(thread_id, preparefnc, inqueue=None, exitevent=None, cont
              if v > 0:
                  res[i] = v
          outqueue.put(res)
-  
+
 
 def get_device_ids(controller, port):
          """Returns a list of switch ids"""
-          
+
          ids = []
 	 rsp = requests.get(url='http://{0}:{1}/restconf/operational/opendaylight-inventory:nodes'
                          .format(controller, port), auth=('admin', 'admin'))
@@ -232,8 +229,8 @@ def get_device_ids(controller, port):
          except KeyError:
             pass
          return ids
-  
-  
+
+
 def get_flow_ids(controller, port):
          """Returns a list of flow ids"""
          ids = []
@@ -250,10 +247,10 @@ def get_flow_ids(controller, port):
              except KeyError:
                  pass
          return ids
-  
- 
+
+
 def main(*argv):
-  	  
+
          parser = argparse.ArgumentParser(description='Flow programming performance test: First adds and then deletes flows '
                                                       'into the config tree, as specified by optional parameters.')
   
@@ -268,7 +265,7 @@ def main(*argv):
                              help='Number of flows that will be added/deleted in total, default 10')
          parser.add_argument('--fpr', type=int, default=1,
                              help='Number of flows per REST request, default 1')
-         parser.add_argument('--NBport', type=str,default="eth0", 
+         parser.add_argument('--NBport', type=str,default="eth0",
                              help='Northbound interface(REST interface) connected with controller, default eth0')
          parser.add_argument('--SBport', type=str,default="eth0",
                              help='Southbound interface(Openflow interface) connected with Controller, default eth0')
@@ -282,7 +279,7 @@ def main(*argv):
          parser.add_argument('--bulk_add',type=str, default=False,
                              help='Install all flows in bulk with single REST; default=False')
          parser.add_argument('--outfile', default='', help='Stores add and delete flow rest api rate; default=""')
-  
+
          in_args = parser.parse_args(*argv)
          global port1
          global port2
@@ -304,14 +301,14 @@ def main(*argv):
 	 threads.append(t2)
          threads.append(t3)
          t1.start()
-         
+
          if bulk=='True':
             t2.start()
             time.sleep(5)
 	 else:
             t3.start()
             time.sleep(5)
-         
+
          # get device ids
          base_dev_ids = get_device_ids(controller=in_args.controller_host_ip, port=in_args.port)
          base_flow_ids = get_flow_ids(controller=in_args.controller_host_ip, port=in_args.port)
@@ -319,13 +316,13 @@ def main(*argv):
          ip_addr = Counter(int(netaddr.IPAddress('10.0.0.1')))
          # prepare func
          preparefnc = _prepare_post
-   
+
          base_num_flows = len(base_flow_ids)
          print "\nStep 2: Collecting the default flows count in OVS\n"
          print "        BASELINE:"
          print "            devices:", len(base_dev_ids)
          print "            flows  :", base_num_flows
-         
+
          # lets fill the queue for workers
          nflows = 0
          flow_list = []
@@ -344,12 +341,12 @@ def main(*argv):
                  nflows = 0
                  flow_list = []
                  dev_id = random.choice(base_dev_ids)
-  
+
          # result_gueue
          resultqueue = Queue.Queue()
          # creaet exit event
          exitevent = threading.Event()
-  
+
          # run workers
          with Timer() as tmr:
              threads = []
@@ -360,9 +357,9 @@ def main(*argv):
                                                 "template": flow_template, "outqueue": resultqueue, "method": "POST"})
                  threads.append(thr)
                  thr.start()
- 
+
              exitevent.set()
-    
+
              result = {}
              # waitng for reqults and sum them up
              for t in threads:
@@ -374,10 +371,10 @@ def main(*argv):
                         result[k] = v
                      else:
                          result[k] += v
-   
+
          print "\n        Added", in_args.flows, "flows in", tmr.secs, "seconds", result,"\n"
          add_details = {"duration": tmr.secs, "flows": len(flow_details)}
- 
+
 	 print "\nStep 4: Wait for all the flows to be installed in OVS or the expiry of test duration (60 Seconds)\n" 
 
          # lets print some stats
@@ -391,31 +388,30 @@ def main(*argv):
                  if reported_flows >= expected_flows:
                      break
                  time.sleep(5)
-  
+
          if i < rounds:
              print "        ... monitoring finished in +%d seconds\n\n" % t.secs
          else:
              print "        ... monitoring aborted after %d rounds, elapsed time %d\n\n" % (rounds, t.secs)
-  
+
          if in_args.no_delete:
              return
 
 	 print "Step 5: Remove the installed flows in OVS after the expire of given timeout.\n"
          # sleep in between
          time.sleep(in_args.timeout)
-	  
- 
+
          print "      Flows to be removed: %d" % len(flow_details)
          # lets fill the queue for workers
          sendqueue = Queue.Queue()
          for fld in flow_details:
              sendqueue.put([fld])
-    
+
          # result_gueue
          resultqueue = Queue.Queue()
          # creaet exit event
          exitevent = threading.Event()
-  
+
         # run workers
          preparefnc = _prepare_delete
          with Timer() as tmr:
@@ -433,9 +429,9 @@ def main(*argv):
                                                     "template": None, "outqueue": resultqueue, "method": "DELETE"})
                      threads.append(thr)
                      thr.start()
-     
+
                  exitevent.set()
-     
+
                  result = {}
                  # waitng for results and sum them up
                  for t in threads:
@@ -447,10 +443,10 @@ def main(*argv):
                              result[k] = v
                          else:
                              result[k] += v
-    
+
          print "      Removed", len(flow_details), "flows in", tmr.secs, "seconds", result
          del_details = {"duration": tmr.secs, "flows": len(flow_details)}
-  
+
          print "\n        Stats monitoring ..."
          rounds = 200
          with Timer() as t:
@@ -461,27 +457,26 @@ def main(*argv):
                  if reported_flows <= expected_flows:
                      break
                  time.sleep(5)
-  
+
          if i < rounds:
              print "        ... monitoring finished in +%d seconds\n\n" % t.secs
          else:
              print "        ... monitoring aborted after %d rounds, elapsed time %d\n\n" % (rounds, t.secs)
-  
+
          if in_args.outfile != "":
              addrate = add_details['flows'] / add_details['duration']
              delrate = del_details['flows'] / del_details['duration']
              print "addrate", addrate
              print "delrate", delrate
-  
+
              with open(in_args.outfile, "wt") as fd:
                  fd.write("AddRate,DeleteRate\n")
                  fd.write("{0},{1}\n".format(addrate, delrate))
 
-      
 if __name__ == "__main__":
          main(sys.argv[1:])
 
-print "Step 6: Stop Packet Capture in NB & SB interfaces\n"	     
+print "Step 6: Stop Packet Capture in NB & SB interfaces\n"
 print "        Waiting for packet capture to close the process....\n"
 time.sleep(60)
 
@@ -541,18 +536,18 @@ else:
     count = 0
     count1 = 0
     minimum = 0
-    maximum = 0	
-		     
+    maximum = 0
+
     for i in range (0,int(No_of_flows)):
             j = i+1
             with open(filename2) as f:
-                    for line in itertools.islice(f, i, j): 
+                    for line in itertools.islice(f, i, j):
                       a=line.index('.')
                       b=a-2
                       c=a+7
                       T1F1=line[b:c]
                       with open(filename1) as f:
-                              for line2 in itertools.islice(f, i, j): 
+                              for line2 in itertools.islice(f, i, j):
                                a=line2.index('.')
                                b=a-2
                                c=a+7
@@ -561,10 +556,10 @@ else:
                                T1H1=float(T1H1)
                                Time = T1F1 - T1H1
                                Time1 = Time*1000
-			       vol.append(Time1)	
+			       vol.append(Time1)
 			       AvgTime=AvgTime+Time1
-	      
-##Here the number captured flow install message and flow_mod message is calculated.  
+
+##Here the number captured flow install message and flow_mod message is calculated.
     with open(filename1) as myfile:
         count = sum(1 for line in myfile)
         print "        Numer of flow install message send to controller:",count,"\n"

@@ -14,7 +14,7 @@
        numToKeep: 30
     publishers:
     - html-publisher:
-        dir: /home/PKTBSDN_Reports/
+        dir: /home/reports/
         files: "report.html"
         name: PKT-BLASTER-SDN
         keep-all: true
