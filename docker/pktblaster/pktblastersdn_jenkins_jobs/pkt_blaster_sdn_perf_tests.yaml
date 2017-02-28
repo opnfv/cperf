@@ -5,8 +5,6 @@
     name: PktBlaster_SDN_Tests
     description: "script execution for measuring Proactive Path Provisioning Time"
     defaults: pktblaster-sdn
-    triggers:
-      #- timed:
     wrappers:
       - timestamps:
     parameters:
@@ -33,14 +31,14 @@
 
     builders:
       - shell: |
-          #-------------------------------------------------  
+          #-------------------------------------------------
           #pre-actin script
           #-------------------------------------------------
           echo "pre-action execution....."
-          chmod -R 777 /home/pktblastersdn/pktblastersdn_jenkins_jobs/pktblastersdn_pre_actions.sh
+          chmod +x /home/pktblastersdn/pktblastersdn_jenkins_jobs/pktblastersdn_pre_actions.sh
           source /home/pktblastersdn/pktblastersdn_jenkins_jobs/pktblastersdn_pre_actions.sh
           #-------------------------------------------------
-          #test-script 
+          #test-script
           #-------------------------------------------------
           echo "scripts execution for perf tests..."
           python /home/pktblastersdn/pktblastersdn_tests/sdn_topology.py \
@@ -51,14 +49,14 @@
               --controller_host_ip=$CONTROLLER_HOST_IP \
               --NBport=$NBPORT \
               --SBport=$SBPORT
-          
+
           python /home/pktblastersdn/pktblastersdn_tests/Cleanup.py
-     
+
           #-------------------------------------------------
           #post-action script
           #-------------------------------------------------
           echo "post-action execution..."
-          cp /home/PKTBSDN_Reports/report.html /home/pktblastersdn/Results/
+          cp /home/reports/report.html /home/pktblastersdn/results/
 # ------------------------------------------------------------------------------
 # job instances
 # ------------------------------------------------------------------------------
@@ -67,4 +65,3 @@
     name: pktblastersdn-jenkins-jobs
     jobs:
        - 'PktBlaster_SDN_Tests'
-       
