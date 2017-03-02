@@ -21,6 +21,8 @@
 FROM centos:7
 MAINTAINER Jamo Luhrsen <jluhrsen@redhat.com>
 
+ARG BRANCH=master
+
 ENV HOME /home/opnfv
 ENV REPOS_DIR /home/opnfv/repos
 RUN mkdir -p ${REPOS_DIR}
