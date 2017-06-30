@@ -52,6 +52,7 @@ RUN pip install docker-py \
     netifaces \
     netaddr \
     ipaddr \
+    jmespath \
     jsonpath-rw \
     robotframework{,-{httplibrary,requests,sshlibrary,selenium2library}}
 
