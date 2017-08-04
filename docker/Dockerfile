@@ -30,31 +30,33 @@ RUN mkdir -p ${REPOS_DIR}
 RUN yum install -y epel-release && yum update -y
 
 RUN yum install -y \
-    net-snmp-devel \
-    libpcap-devel \
-    autoconf \
-    make \
     automake \
-    libtool \
+    autoconf \
+    git \
     libconfig-devel \
     libffi-devel \
-    wget \
-    git \
+    libpcap-devel \
+    libtool \
+    make \
+    net-snmp-devel \
     python-devel \
+    python-openstackclient \
     python-pip \
-    python-setuptools
+    python-setuptools \
+    wget
 
-RUN pip install docker-py \
-    setuptools \
+RUN pip install \
+    docker-py \
     importlib \
-    requests \
-    scapy \
-    netifaces \
-    netaddr \
     ipaddr \
     jmespath \
     jsonpath-rw \
-    robotframework{,-{httplibrary,requests,sshlibrary,selenium2library}}
+    netifaces \
+    netaddr \
+    requests \
+    robotframework{,-{httplibrary,requests,sshlibrary,selenium2library}} \
+    scapy \
+    setuptools
 
 RUN git config --global http.sslVerify false
 
