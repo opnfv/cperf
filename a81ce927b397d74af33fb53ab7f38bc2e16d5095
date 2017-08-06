@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da33351e_39f13ace",
+        "filename": "docker/Dockerfile",
+        "patchSetId": 1
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 2909
+      },
+      "writtenOn": "2017-08-06T17:15:54Z",
+      "side": 1,
+      "message": "These 3 ENV directives could be combined into a single directive to reduce layers in the resulting image: \n\nENV CPERF_REPO_DIR\u003d${REPOS_DIR}/cperf \\\n    RELENG_REPO_DIR\u003d${REPOS_DIR}/releng \\\n    ODL_TEST_REPO_DIR\u003d${REPOS_DIR}/odl_test\n\nAnyone have a reference to OPNFV best practices on Dockerfiles?",
+      "range": {
+        "startLine": 64,
+        "startChar": 0,
+        "endLine": 66,
+        "endChar": 43
+      },
+      "revId": "a81ce927b397d74af33fb53ab7f38bc2e16d5095",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da33351e_79d3c238",
+        "filename": "docker/Dockerfile",
+        "patchSetId": 1
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 2909
+      },
+      "writtenOn": "2017-08-06T17:15:54Z",
+      "side": 1,
+      "message": "Do these git clone calls and the wget call on line 46 need anteater exceptions [https://wiki.opnfv.org/pages/viewpage.action?pageId\u003d11700198] defined for them?",
+      "range": {
+        "startLine": 67,
+        "startChar": 0,
+        "endLine": 69,
+        "endChar": 89
+      },
+      "revId": "a81ce927b397d74af33fb53ab7f38bc2e16d5095",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    }
+  ]
+}
