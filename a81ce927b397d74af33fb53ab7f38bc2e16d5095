@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "da33351e_742bc9eb",
+        "filename": "docker/Dockerfile",
+        "patchSetId": 1
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 543
+      },
+      "writtenOn": "2017-08-07T19:20:24Z",
+      "side": 1,
+      "message": "Nope, I haven\u0027t seen such a thing. Would be best to do this in a different patch imho, since this code isn\u0027t changing in this patch.",
+      "parentUuid": "da33351e_39f13ace",
+      "range": {
+        "startLine": 64,
+        "startChar": 0,
+        "endLine": 66,
+        "endChar": 43
+      },
+      "revId": "a81ce927b397d74af33fb53ab7f38bc2e16d5095",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da33351e_79d3c238",
         "filename": "docker/Dockerfile",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2017-08-06T17:15:54Z",
       "side": 1,
       "message": "Do these git clone calls and the wget call on line 46 need anteater exceptions [https://wiki.opnfv.org/pages/viewpage.action?pageId\u003d11700198] defined for them?",
+      "range": {
+        "startLine": 67,
+        "startChar": 0,
+        "endLine": 69,
+        "endChar": 89
+      },
+      "revId": "a81ce927b397d74af33fb53ab7f38bc2e16d5095",
+      "serverId": "bbac25d2-bf60-4904-9ba8-a72fc000d6c5",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da33351e_14efddb1",
+        "filename": "docker/Dockerfile",
+        "patchSetId": 1
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 543
+      },
+      "writtenOn": "2017-08-07T19:20:24Z",
+      "side": 1,
+      "message": "Good point. I guess we don\u0027t have Anteater verify jobs for our repo, which is why it\u0027s not catching this.\n\nSince this code isn\u0027t changing in this patch, I think it\u0027s something we should fix when/if we add that verify job.",
+      "parentUuid": "da33351e_79d3c238",
       "range": {
         "startLine": 67,
         "startChar": 0,
