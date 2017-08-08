@@ -2,8 +2,8 @@ Project Name: Controller Performance Testing (cperf)
 Project Creation Date: September 1, 2015
 Project Category: Integration & Testing
 Lifecycle State: Incubation
-Primary Contact: Daniel Farrell
-Project Lead: Daniel Farrell
+Primary Contact: Matt Welch
+Project Lead: Matt Welch
 Jira Project Name: Controller Performance Testing
 Jira Project Prefix: cperf
 Mailing list tag: cperf
@@ -11,8 +11,10 @@ Repository: cperf
 Committers:
 Daniel Farrell, dfarrell@redhat.com, IRC: dfarrell07
 Luis Gomez, ecelgp@gmail.com, IRC: LuisGomez
+Matt Welch (matt.welch@intel.com, IRC: mattw4)
 Jamo Luhrsen, jluhrsen@redhat.com, IRC: jamoluhrsen
 Marcus Williams, marcus.williams@intel.com, IRC: mgkwill
+Matt Welch, matt.welch@intel.com, IRC: mattw4
 Tim Rozet, trozet@redhat.com, IRC: trozet
 
 Link to TSC approval of the project: http://ircbot.wl.linuxfoundation.org/meetings/opnfv-meeting/2015/opnfv-meeting.2015-09-01-13.59.log.html
