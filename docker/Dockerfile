@@ -27,7 +27,7 @@ ENV HOME /home/opnfv
 ENV REPOS_DIR /home/opnfv/repos
 RUN mkdir -p ${REPOS_DIR}
 
-RUN yum install -y epel-release && yum update -y
+RUN yum install -y epel-release centos-release-openstack-ocata && yum update -y
 
 RUN yum install -y \
     automake \
