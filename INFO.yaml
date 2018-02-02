@@ -1,0 +1,63 @@
+---
+project: 'Controller Performance Testing (cperf)'
+project_creation_date: 'September 1, 2015'
+project_category: 'Integration & Testing'
+lifecycle_state: 'Incubation'
+project_lead: &opnfv_cperf_ptl
+    name: 'Sai Sindhur  Malleni'
+    email: 'smalleni@redhat.com'
+    id: 'smalleni'
+    company: 'redhat.com'
+primary_contact: *opnfv_cperf_ptl
+issue_tracking:
+    type: 'jira'
+    url: 'https://jira.opnfv.org/projects/cperf'
+    key: 'cperf'
+mailing_list:
+    type: 'mailman2'
+    url: 'opnfv-tech-discuss@lists.opnfv.org'
+    tag: '[cperf]'
+realtime_discussion:
+    type: irc
+    server: 'freenode.net'
+    channel: '#opnfv-cperf'
+meetings:
+    - type: 'bluejeans+irc'
+      agenda:  # eg: 'https://wiki.opnfv.org/display/'
+      url:  'https://bluejeans.com/375326132'
+      server: 'freenode.net'
+      channel: '#opnfv-cperf'
+      repeats: 'weekly'
+      time: 'Thursday 18:15 UTC'
+repositories:
+    - 'cperf'
+committers:
+    - <<: *opnfv_cperf_ptl
+    - name: 'Daniel Farrell'
+      email: 'dfarrell07@gmail.com'
+      company: 'gmail.com'
+      id: 'dfarrell07'
+    - name: 'Jamo Luhrsen'
+      email: 'jluhrsen@redhat.com'
+      company: 'redhat.com'
+      id: 'jluhrsen'
+    - name: 'Tim Rozet'
+      email: 'trozet@redhat.com'
+      company: 'redhat.com'
+      id: 'trozet'
+    - name: 'Luis Gomez'
+      email: 'ecelgp@gmail.com'
+      company: 'gmail.com'
+      id: 'ecelgp'
+    - name: 'Matt Welch'
+      email: 'matt.welch@intel.com'
+      company: 'intel.com'
+      id: 'mattw42'
+    - name: 'Sai Sindhur  Malleni'
+      email: 'smalleni@redhat.com'
+      company: 'redhat.com'
+      id: 'smalleni'
+tsc:
+    # yamllint disable rule:line-length
+    approval: 'http//ircbot.wl.linuxfoundation.org/meetings/opnfv-meeting/2015/opnfv-meeting.2015-09-01-13.59.log.html'
+    # yamllint enable rule:line-length
