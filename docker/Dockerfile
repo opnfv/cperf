@@ -27,7 +27,10 @@ ENV HOME /home/opnfv
 ENV REPOS_DIR /home/opnfv/repos
 RUN mkdir -p ${REPOS_DIR}
 
-RUN yum install -y epel-release centos-release-openstack-ocata && yum update -y
+# need to put distro in a yum vars file. learned that here:
+# https://review.openstack.org/#/c/568180/2//COMMIT_MSG
+RUN echo "centos" > /etc/yum/vars/contentdir
+RUN yum install -y epel-release centos-release-openstack-queens && yum update -y
 
 RUN yum install -y \
     automake \
@@ -71,6 +74,6 @@ RUN git clone https://git.opendaylight.org/gerrit/p/integration/test ${ODL_TEST_
 # Clone and build CBench
 ENV OF_DIR ${REPOS_DIR}/openflow
 ENV OFLOPS_DIR ${REPOS_DIR}/oflops
-RUN git clone git://gitosis.stanford.edu/openflow.git ${OF_DIR}
-RUN git clone https://github.com/andi-bigswitch/oflops.git ${OFLOPS_DIR}
+RUN git clone https://github.com/mininet/openflow.git ${OF_DIR}
+RUN git clone https://github.com/mininet/oflops.git ${OFLOPS_DIR}
 RUN cd ${OFLOPS_DIR} && ./boot.sh && ./configure --with-openflow-src-dir=${OF_DIR} && make && make install
