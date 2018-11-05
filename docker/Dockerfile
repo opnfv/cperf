@@ -57,7 +57,7 @@ RUN pip install \
     netifaces \
     netaddr \
     requests \
-    robotframework{,-{httplibrary,requests,sshlibrary,selenium2library}} \
+    robotframework{,-{httplibrary,requests,sshlibrary==3.1.1,selenium2library}} \
     scapy \
     setuptools
 
